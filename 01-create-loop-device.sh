@@ -21,7 +21,7 @@ echo "### 01 Create the loop devices - STARTING"
 echo "1. Create an empty virtual hard drive file (30Gb)"
 dd \
   if=$IF \
-  of=~$OF \
+  of=$OF \
   bs=$BS \
   count=$COUNT \
   seek=$SEEK \
