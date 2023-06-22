@@ -16,7 +16,7 @@ echo "2. Mount the root partition at $ROOT_MOUNT"
 sudo mount $ROOT_MOUNT $CHROOT_PATH
 
 echo "3. Create the boot directory: $BOOT_PATH"
-mkdir $BOOT_PATH
+sudo mkdir $BOOT_PATH
 
 echo "4. Mount the boot partition at $BOOT_MOUNT"
 sudo mount $BOOT_MOUNT $BOOT_PATH
