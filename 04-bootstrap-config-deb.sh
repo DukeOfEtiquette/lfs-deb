@@ -5,7 +5,7 @@ set -e
 ARCH=amd64
 VARIANT=minbase
 COMPONENTS="main"
-INCLUDE=""
+INCLUDE="ca-certificates,cron,iptables,isc-dhcp-client,libnss-myhostname,ntp,ntpdate,rsyslog,ssh,sudo,dialog,whiptail,man-db,curl,dosfstools,e2fsck-stati"
 CODENAME=bookworm
 CHROOT_PATH=$HOME/lfs-deb/chroot
 URL=http://deb.debian.org/debian/
