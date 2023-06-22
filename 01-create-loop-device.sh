@@ -16,7 +16,9 @@ COUNT=0
 SEEK=32212254720
 STATUS=progress
 
-# 1. Create an empty virtual hard drive file (30Gb)
+echo "### 01 Create the loop devices - STARTING"
+
+echo "1. Create an empty virtual hard drive file (30Gb)"
 dd \
   if=$IF \
   of=~$OF \
@@ -25,7 +27,7 @@ dd \
   seek=$SEEK \
   status=$STATUS
 
-# 2. Create partitions on the file
+echo "2. Create partitions on the file"
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | sudo fdisk $OF
 o # clear the in memory partition table
 n # new partition
@@ -45,7 +47,7 @@ w # write the partition table
 q # and we're done
 EOF
 
-# 3. Start the loop device
+echo "3. Start the loop device"
 sudo losetup -fP $OF
 
 echo "3.1 Check the status of the loop device"
@@ -55,3 +57,5 @@ echo "Expected output: /dev/loop0: [64775]:26084892 ($OF)"
 # 4. Check the partitions of the loop device
 echo "More details for /dev/loop0"
 sudo fdisk -l /dev/loop0
+
+echo "### 01 Create the loop devices - COMPLETE"

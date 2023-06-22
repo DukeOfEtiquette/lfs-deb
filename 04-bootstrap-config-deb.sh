@@ -10,7 +10,9 @@ CODENAME=bookworm
 CHROOT_PATH=$HOME/lfs-deb/chroot
 URL=http://deb.debian.org/debian/
 
-# 1. Run debootstrap
+echo "### 04 Bootstrap & Config Debian - STARTING"
+
+echo "1. Run debootstrap"
 sudo debootstrap \
     --arch=$ARCH \
     --variant=$VARIANT \
@@ -20,6 +22,8 @@ sudo debootstrap \
     $CHROOT_PATH \
     $URL
 
-# 2. Configure external mount points
+echo "2. Configure external mount points: $CHROOT_PATH/dev and $CHROOT_PATH/run"
 sudo mount --bind /dev $CHROOT_PATH/dev
 sudo mount --bind /run $CHROOT_PATH/run
+
+echo "### 04 Bootstrap & Config Debian - COMPLETE"

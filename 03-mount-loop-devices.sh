@@ -7,14 +7,18 @@ ROOT_MOUNT=/dev/loop0p2
 BOOT_PATH=$CHROOT_PATH/boot
 BOOT_MOUNT=/dev/loop0p1
 
-# 1. Create the chroot directory
+echo "### 03 Mount loop devices - STARTING"
+
+echo "1. Create the chroot directory: $CHROOT_PATH"
 mkdir $CHROOT_PATH
 
-# 2. Mount the root partition
+echo "2. Mount the root partition at $ROOT_MOUNT"
 sudo mount $ROOT_MOUNT $CHROOT_PATH
 
-# 3. Create the boot directory
+echo "3. Create the boot directory: $BOOT_PATH"
 mkdir $BOOT_PATH
 
-# 4. Mount the boot partition
+echo "4. Mount the boot partition at $BOOT_MOUNT"
 sudo mount $BOOT_MOUNT $BOOT_PATH
+
+echo "### 03 Mount loop devices - COMPLETE"
