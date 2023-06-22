@@ -41,7 +41,7 @@ p # primary partition
     # default, start immediately after preceding partition
     # default, extend partition to end of disk
 a # make a partition bootable
-1 # bootable partition is partition 1 -- /dev/loop1p1
+1 # bootable partition is partition 1 -- /dev/loop0p1
 p # print the in-memory partition table
 w # write the partition table
 q # and we're done
@@ -52,10 +52,10 @@ sudo losetup -fP $OF
 
 echo "3.1 Check the status of the loop device"
 sudo losetup -a
-echo "Expected output: /dev/loop1: [64775]:26084892 ($OF)"
+echo "Expected output: /dev/loop0: [64775]:26084892 ($OF)"
 
 # 4. Check the partitions of the loop device
-echo "More details for /dev/loop1"
-sudo fdisk -l /dev/loop1
+echo "More details for /dev/loop0"
+sudo fdisk -l /dev/loop0
 
 echo "### 01 Create the loop devices - COMPLETE"

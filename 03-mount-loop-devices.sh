@@ -3,9 +3,9 @@
 set -e
 
 CHROOT_PATH=$HOME/lfs-deb/chroot
-ROOT_MOUNT=/dev/loop1p2
+ROOT_MOUNT=/dev/loop0p2
 BOOT_PATH=$CHROOT_PATH/boot
-BOOT_MOUNT=/dev/loop1p1
+BOOT_MOUNT=/dev/loop0p1
 
 echo "### 03 Mount loop devices - STARTING"
 
