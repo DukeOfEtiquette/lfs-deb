@@ -2,7 +2,7 @@
 # source: https://mvallim.github.io/kubernetes-under-the-hood/documentation/create-linux-image.html#mount-the-loop-devices
 set -e
 
-CHROOT_PATH=$HOME/lfs-dev/chroot
+CHROOT_PATH=$HOME/lfs-deb/chroot
 ROOT_MOUNT=/dev/loop0p2
 BOOT_PATH=$CHROOT_PATH/boot
 BOOT_MOUNT=/dev/loop0p1
